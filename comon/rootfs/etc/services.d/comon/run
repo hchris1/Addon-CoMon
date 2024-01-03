@@ -5,4 +5,5 @@
 # ==============================================================================
 
 ## Run CoMon
-exec /opt/comon/CoMon.Web.Host
+cd /opt/comon || exit
+exec .//CoMon.Web.Host
