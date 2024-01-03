@@ -9,7 +9,7 @@ RUN apk add iputils-ping icu-libs
 # Copy application
 COPY --from=comon /app /opt/comon
 
-# Folder for persistent data
+# Folder for persistent data to store db
 RUN mkdir /data
 
 # Copy root filesystem
