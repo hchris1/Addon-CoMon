@@ -12,4 +12,5 @@ COPY --from=comon /app /opt/comon
 # Folder for persistent data
 RUN mkdir /data
 
-WORKDIR /opt/comon
+# Copy root filesystem
+COPY rootfs /
