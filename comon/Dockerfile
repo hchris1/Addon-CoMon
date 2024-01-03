@@ -14,3 +14,7 @@ RUN mkdir /data
 
 # Copy root filesystem
 COPY rootfs /
+
+# Make scripts executable
+RUN chmod a+x /etc/services.d/comon/run
+RUN chmod a+x /etc/services.d/comon/finish
