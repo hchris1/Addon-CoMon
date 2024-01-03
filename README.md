@@ -8,6 +8,8 @@
 
 A simple tool for condition monitoring.
 
+Link to [CoMon](https://github.com/hchris1/CoMon).
+
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
