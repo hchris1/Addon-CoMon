@@ -4,5 +4,5 @@
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 
-## Run your program
+## Run CoMon
 exec /opt/comon/CoMon.Web.Host
