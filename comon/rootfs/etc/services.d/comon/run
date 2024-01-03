@@ -1,9 +1,13 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
-# Start the example service
-# s6-overlay docs: https://github.com/just-containers/s6-overlay
+# Home Assistant Community Add-on: CoMon
+# Starts CoMon
 # ==============================================================================
 
 ## Run CoMon
-cd /opt/comon || exit
+cd /opt/comon || bashio::exit.nok "Could not change directory to CoMon"
+
+bashio::log.info "Starting CoMon..."
+
 exec .//CoMon.Web.Host
