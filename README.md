@@ -6,7 +6,7 @@
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
 
-A simple tool for condition monitoring.
+A simple tool for Condition Monitoring.
 
 Link to [CoMon](https://github.com/hchris1/CoMon).
 

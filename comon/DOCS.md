@@ -1,6 +1,6 @@
 # Home Assistant Community Add-on: CoMon
 
-A simple tool for condition monitoring.
+A simple tool for Condition Monitoring.
 
 ## Installation
 
