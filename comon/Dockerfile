@@ -4,7 +4,7 @@ FROM hchris1234/comon:$COMON_VERSION as comon
 FROM $BUILD_FROM
 
 # Install dependencies for ping, dotnet and nginx
-RUN apk add iputils-ping icu-libs nginx
+RUN apk add iputils-ping icu-libs icu-data-full nginx
 
 # Copy application
 COPY --from=comon /app /opt/comon
