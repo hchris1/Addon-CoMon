@@ -3,8 +3,8 @@ ARG COMON_VERSION
 FROM hchris1234/comon:$COMON_VERSION as comon
 FROM $BUILD_FROM
 
-# Install dependencies for ping and dotnet
-RUN apk add iputils-ping icu-libs
+# Install dependencies for ping, dotnet and nginx
+RUN apk add iputils-ping icu-libs nginx
 
 # Copy application
 COPY --from=comon /app /opt/comon
@@ -18,3 +18,5 @@ COPY rootfs /
 # Make scripts executable
 RUN chmod a+x /etc/services.d/comon/run
 RUN chmod a+x /etc/services.d/comon/finish
+RUN chmod a+x /etc/services.d/nginx/run
+RUN chmod a+x /etc/services.d/nginx/finish

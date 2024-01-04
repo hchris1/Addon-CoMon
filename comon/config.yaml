@@ -14,4 +14,3 @@ ports_description:
   8080/tcp: Web interface
 image: "ghcr.io/hchris1/{arch}-addon-comon"
 ingress: true
-ingress_port: 8080

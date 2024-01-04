@@ -1,0 +1,9 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Community Hass.io Add-ons: CoMon
+# Runs the NGINX proxy
+# ==============================================================================
+
+bashio::log.info "Starting NGINX..."
+exec nginx < /dev/null
