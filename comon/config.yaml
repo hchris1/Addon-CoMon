@@ -3,6 +3,7 @@ version: "0.1.0"
 slug: comon
 description: A simple tool for Condition Monitoring
 panel_icon: mdi:heart
+url: https://github.com/hchris1/Addon-CoMon
 init: false
 arch:
   - aarch64
