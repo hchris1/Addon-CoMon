@@ -2,7 +2,7 @@ name: CoMon
 version: "0.1.0"
 slug: comon
 description: A simple tool for condition monitoring.
-webui: http://[HOST]:[PORT:8080]
+panel_icon: mdi:heart
 init: false
 arch:
   - aarch64
