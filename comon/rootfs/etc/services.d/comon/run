@@ -5,6 +5,19 @@
 # Starts CoMon
 # ==============================================================================
 
+## Setup environment variables
+export HomeAssistant__MqttEnabled=$(bashio::config 'MqttEnabled')
+export HomeAssistant__MqttUser=$(bashio::config 'OverrideMqttUsername')
+export HomeAssistant__MqttPassword=$(bashio::config 'OverrideMqttPassword')
+export HomeAssistant__MqttHost=$(bashio::config 'OverrideMqttHost')
+export HomeAssistant__MqttPort=$(bashio::config 'OverrideMqttPort')
+
+test "$HomeAssistant__MqttEnabled" = "null" && export HomeAssistant__MqttEnabled=false
+test "$HomeAssistant__MqttUser" = "null" && export HomeAssistant__MqttUser=$(bashio::services "mqtt" "username")
+test "$HomeAssistant__MqttPassword" = "null" && export HomeAssistant__MqttPassword=$(bashio::services "mqtt" "password")
+test "$HomeAssistant__MqttHost" = "null" && export HomeAssistant__MqttHost=$(bashio::services "mqtt" "host")
+test "$HomeAssistant__MqttPort" = "null" && export HomeAssistant__MqttPort=$(bashio::services "mqtt" "port")
+
 ## Run CoMon
 cd /opt/comon || bashio::exit.nok "Could not change directory to CoMon"
 

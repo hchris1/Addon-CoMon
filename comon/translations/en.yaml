@@ -1,0 +1,16 @@
+configuration:
+  MqttEnabled:
+    name: Enable MQTT
+    description: Enabling MQTT will allow CoMon to publish data to your MQTT broker.
+  OverrideMqttUsername:
+    name: Override MQTT username
+    description: Only use this if you are NOT using the official HA MQTT addon.
+  OverrideMqttPassword:
+    name: Override MQTT password
+    description: Only use this if you are NOT using the official HA MQTT addon.
+  OverrideMqttHost:
+    name: Override MQTT host
+    description: Only use this if you are NOT using the official HA MQTT addon.
+  OverrideMqttPort:
+    name: Override MQTT port
+    description: Only use this if you are NOT using the official HA MQTT addon.
