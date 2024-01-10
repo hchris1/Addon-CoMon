@@ -1,7 +1,11 @@
 name: CoMon
-version: "0.1.3"
+version: "0.2.0"
 slug: comon
 description: A simple tool for Condition Monitoring
+services:
+  - "mqtt:want"
+discovery:
+  - "mqtt"
 panel_icon: mdi:heart
 url: https://github.com/hchris1/Addon-CoMon
 init: false
@@ -15,3 +19,9 @@ ports_description:
   8080/tcp: Web interface
 image: "ghcr.io/hchris1/{arch}-addon-comon"
 ingress: true
+schema:
+  MqttEnabled: bool?
+  OverrideMqttUsername: str?
+  OverrideMqttPassword: str?
+  OverrideMqttHost: str?
+  OverrideMqttPort: int?
