@@ -5,22 +5,33 @@
 # Starts CoMon
 # ==============================================================================
 
-## Setup environment variables
-export HomeAssistant__MqttEnabled=$(bashio::config 'MqttEnabled')
-export HomeAssistant__MqttUser=$(bashio::config 'OverrideMqttUsername')
-export HomeAssistant__MqttPassword=$(bashio::config 'OverrideMqttPassword')
-export HomeAssistant__MqttHost=$(bashio::config 'OverrideMqttHost')
-export HomeAssistant__MqttPort=$(bashio::config 'OverrideMqttPort')
+# Setup environment variables
+HomeAssistant__Enabled=$(bashio::config 'MqttEnabled')
+HomeAssistant__MqttUser=$(bashio::config 'OverrideMqttUsername')
+HomeAssistant__MqttPassword=$(bashio::config 'OverrideMqttPassword')
+HomeAssistant__MqttHost=$(bashio::config 'OverrideMqttHost')
+HomeAssistant__MqttPort=$(bashio::config 'OverrideMqttPort')
 
-test "$HomeAssistant__MqttEnabled" = "null" && export HomeAssistant__MqttEnabled=false
-test "$HomeAssistant__MqttUser" = "null" && export HomeAssistant__MqttUser=$(bashio::services "mqtt" "username")
-test "$HomeAssistant__MqttPassword" = "null" && export HomeAssistant__MqttPassword=$(bashio::services "mqtt" "password")
-test "$HomeAssistant__MqttHost" = "null" && export HomeAssistant__MqttHost=$(bashio::services "mqtt" "host")
-test "$HomeAssistant__MqttPort" = "null" && export HomeAssistant__MqttPort=$(bashio::services "mqtt" "port")
+test "$HomeAssistant__Enabled" = "null" && HomeAssistant__Enabled=false
+test "$HomeAssistant__MqttUser" = "null" && HomeAssistant__MqttUser=$(bashio::services "mqtt" "username")
+test "$HomeAssistant__MqttPassword" = "null" && HomeAssistant__MqttPassword=$(bashio::services "mqtt" "password")
+test "$HomeAssistant__MqttHost" = "null" && HomeAssistant__MqttHost=$(bashio::services "mqtt" "host")
+test "$HomeAssistant__MqttPort" = "null" && HomeAssistant__MqttPort=$(bashio::services "mqtt" "port")
 
-## Run CoMon
+export HomeAssistant__Enabled
+export HomeAssistant__MqttUser
+export HomeAssistant__MqttPassword
+export HomeAssistant__MqttHost
+export HomeAssistant__MqttPort
+
+bashio::log.info "HomeAssistant__Enabled: $HomeAssistant__Enabled"
+bashio::log.info "HomeAssistant__MqttUser: $HomeAssistant__MqttUser"
+bashio::log.info "HomeAssistant__MqttHost: $HomeAssistant__MqttHost"
+bashio::log.info "HomeAssistant__MqttPort: $HomeAssistant__MqttPort"
+
+# Run CoMon
 cd /opt/comon || bashio::exit.nok "Could not change directory to CoMon"
 
 bashio::log.info "Starting CoMon..."
 
-exec .//CoMon.Web.Host
+exec ./CoMon.Web.Host
