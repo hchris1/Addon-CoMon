@@ -1,12 +1,12 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 build_from:
-  aarch64: ghcr.io/hassio-addons/base:15.0.3
-  amd64: ghcr.io/hassio-addons/base:15.0.3
-  armv7: ghcr.io/hassio-addons/base:15.0.3
+  aarch64: ghcr.io/hassio-addons/base:15.0.5
+  amd64: ghcr.io/hassio-addons/base:15.0.5
+  armv7: ghcr.io/hassio-addons/base:15.0.5
 labels:
   org.opencontainers.image.title: "Home Assistant Add-on: CoMon"
   org.opencontainers.image.description: "A simple tool for Condition Monitoring"
   org.opencontainers.image.source: "https://github.com/hchris1/Addon-CoMon"
   org.opencontainers.image.licenses: "MIT"
 args:
-  COMON_VERSION: "0.2.0"
+  COMON_VERSION: "0.3.0"
