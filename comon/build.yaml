@@ -9,4 +9,4 @@ labels:
   org.opencontainers.image.source: "https://github.com/hchris1/Addon-CoMon"
   org.opencontainers.image.licenses: "MIT"
 args:
-  COMON_VERSION: "0.4.3"
+  COMON_VERSION: "0.4.4"
