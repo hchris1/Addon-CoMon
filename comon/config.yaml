@@ -1,5 +1,5 @@
 name: CoMon
-version: "0.9.0"
+version: "0.9.1"
 slug: comon
 description: A simple tool for Condition Monitoring
 services:
